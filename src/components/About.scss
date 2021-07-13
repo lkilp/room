@@ -1,0 +1,30 @@
+.About {
+    display: flex;
+    align-items: center;
+
+    .content {
+        padding: 0 50px;
+
+        h3 {
+            letter-spacing: 2px;
+            color: black;
+        }
+
+        p {
+            color: var(--dark-gray);
+            line-height: var(--line-height);
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .content {
+            padding: 0 20px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .content {
+            padding: 60px var(--mobile-side-padding);
+        }
+    }
+}

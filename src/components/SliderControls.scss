@@ -1,0 +1,34 @@
+.SliderControls {
+    .slider-controls {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left-arrow-holder,
+    .right-arrow-holder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--very-dark-gray);
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .left-arrow-holder,
+        .right-arrow-holder {
+            width: 55px;
+            height: 55px;
+
+            svg {
+                stroke-width: 2px;
+            }
+        }
+    }
+}

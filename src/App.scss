@@ -1,8 +1,88 @@
 .App {
   --dark-gray: hsl(0, 0%, 63%);
   --very-dark-gray: hsl(0, 0%, 27%);
+  --line-height: 1.6;
+  --mobile-side-padding: 35px;
 
   max-width: 1440px;
   overflow-y: auto;
   margin: 0 auto;
+
+  .grid {
+    display: grid;
+    grid-template-columns: 420fr 420fr 160px 440fr;
+    grid-template-rows: 455px 80px 265px;
+    background-color: white;
+
+    .Navigation {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2;
+    }
+
+    .Slider {
+      grid-column: 3 / span 2;
+    }
+
+    .SliderControls {
+      grid-column: 3 / span 1;
+    }
+
+    .ImageBox.left {
+      grid-column: 1;
+    }
+
+    .About {
+      grid-column: auto / span 2;
+    }
+  }
+
+  .Attribution {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1150px) {
+    .ImageBox.left {
+      display: none;
+    }
+
+    .ImageBox.right {
+      grid-column: span 2;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .grid {
+      grid-template-columns: 1fr 110px;
+      grid-template-rows: 305px 55px auto;
+
+      .Navigation {
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 2;
+        height: 100%;
+      }
+
+      .SliderControls {
+        grid-column: 2;
+        grid-row: 2;
+      }
+
+      .Slider {
+        grid-column: 1 / span 2;
+      }
+
+      .ImageBox.left {
+        grid-column: 1 / span 2;
+      }
+
+      .About {
+        grid-column: 1 / span 2;
+      }
+
+      .ImageBox.left {
+        grid-column: 1 / span 2;
+        display: block;
+      }
+    }
+  }
 }

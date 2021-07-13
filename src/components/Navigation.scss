@@ -1,0 +1,112 @@
+.Navigation {
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 65px;
+    padding-left: 60px;
+    box-sizing: border-box;
+
+    nav {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .logo {
+        margin-right: 40px;
+    }
+
+    a {
+        text-decoration: none;
+        margin: 0 15px;
+        color: white;
+        font-weight: 600;
+        position: relative;
+
+        &:hover:after {
+            position: absolute;
+            content: "";
+            height: 2px;
+            bottom: -7px;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            width: 50%;
+            background: white;
+        }
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+
+    @media screen and (max-width: 850px) {
+        padding-left: 20px;
+
+        .logo {
+            margin-right: 20px;
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        a {
+            margin: 0 5px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        --mobile-menu-height: 110px;
+        padding-left: var(--mobile-side-padding);
+        padding-top: 45px;
+        padding-left: 25px;
+        nav > a {
+            display: none;
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        .logo {
+            margin: 0 auto;
+        }
+
+        .mobile-menu {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            background-color: white;
+            height: var(--mobile-menu-height);
+            padding: 0 25px;
+
+            a {
+                color: black;
+                padding: 0 15px;
+            }
+
+            .close {
+                padding-right: 45px;
+            }
+        }
+
+        .mobile-filter {
+            display: block;
+            position: fixed;
+            top: var(--mobile-menu-height);
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(black, 0.3);
+            z-index: 1;
+        }
+    }
+}
